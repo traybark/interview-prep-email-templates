@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interview Prep Email Templates</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.5;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    select, button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <h2>📧 Interview Prep Email Templates</h2>
+  <p>Select an email type below, then click “Select Template.”</p>
+
+  <label for="templateSelect"><strong>Email Template:</strong></label>
+  <select id="templateSelect">
+    <option value="">— Please choose —</option>
+    <option value="external">Candidate Prep (External)</option>
+    <option value="internal">Candidate Prep (Internal)</option>
+    <option value="panel">Interview Panel Prep</option>
+  </select>
+
+  <button id="downloadBtn">Select Template</button>
+
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+      const choice = document.getElementById('templateSelect').value;
+      if (!choice) {
+        alert('Please select a template.');
+        return;
+      }
+
+      const files = {
+        external: 'https://www.canva.com/design/DAGlaBD6QV0/VKlUj8NB9tzvPq-szHoV8A/view?embed',
+        internal: 'https://www.canva.com/design/DAGlaNZX_Ts/_wG36UG3iu-Oi54O6QlZMw/view?embed',
+        panel: 'https://www.canva.com/design/DAGlZyyBLdE/HR9moFY1XwZ9N5D3Btxp4A/view?embed'
+      };
+
+      const url = files[choice];
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.click();
+    });
+  </script>
+</body>
+</html>
